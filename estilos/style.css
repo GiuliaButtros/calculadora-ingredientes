@@ -7,6 +7,8 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+
+
 body{
     background-color: white;
 }
@@ -15,6 +17,19 @@ nav{
     background-color: #D1B0B0 ;
     width: 100vw;
     height: 50px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a{
+    font-size: 1.2em;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.498);
+    font-family: Arial, Helvetica, sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Tahoma, Geneva, Verdana, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 main{
@@ -27,7 +42,7 @@ main{
 }
 
 article{
-   height: 80%;
+   height: 100%;
    padding: 20px;
 
    display: flex;
@@ -37,12 +52,12 @@ article{
 }
 
 article h1 {
-    padding-bottom: 20px;
+    padding: 20px 0px;
     
 }
 
 article form{
-    
+    flex-grow: 2;
     
 }
 
@@ -57,13 +72,8 @@ article p{
     background-color: #dea8a8;
     padding: 10px;
     border-radius: 20px;
+
+    
 }
 
-article p a{
-    font-size: 1.2em;
-    color: white;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.498);
-    font-family: Arial, Helvetica, sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Tahoma, Geneva, Verdana, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-}
+
