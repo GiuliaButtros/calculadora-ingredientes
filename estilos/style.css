@@ -87,3 +87,8 @@ article p:hover{
 }
 
 
+/* PÁGINA ADD RECEITA */
+article div.div-add-receita{
+    flex-grow: 2;
+}
+
