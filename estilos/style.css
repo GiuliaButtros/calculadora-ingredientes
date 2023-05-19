@@ -83,12 +83,27 @@ section.scroll-box{
 }
 
 section.scroll-box > div.info-receita{
-    
+    display: none;
 }
 
 section.scroll-box > div.info-receita > h2{
     text-align: center;
     padding-bottom: 20px;    
+}
+
+section.scroll-box > div.info-receita > h3{
+    padding-top: 15px;
+}
+
+section.scroll-box > div.info-receita > ul, ol{
+    list-style-position: inside;
+    padding: 5px;
+}
+
+section.scroll-box > div.info-receita li{
+    padding-top: 10px;
+    line-height: 1.5;
+    
 }
 
 section.scroll-add-receita{
