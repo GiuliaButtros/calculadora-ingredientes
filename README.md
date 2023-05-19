@@ -9,5 +9,6 @@
 [X] Busca de referências de aplicações similares
 [X] Estruturação do HTML
 [X] Estilização básica
-[ ] Construção dos objetos
+[ ] Construção do container do conteúdo
 [ ] Implementação do JavaScript
+[ ] Objetos 
