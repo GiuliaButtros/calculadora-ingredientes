@@ -22,7 +22,7 @@ body{
 
 nav{
     background-color: #D1B0B0 ;
-    width: 100vw;
+   /* width: 100vw;*/
    
     display: flex;    
     align-items: center;
@@ -44,9 +44,9 @@ nav a:hover{
 main{
     margin: auto;
     background-color: white;
-    width: 100vw;
+   /* width: 100vw;*/
     height: 640px;
-    border-radius: 5px;
+    
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.411);
 }
 
@@ -109,7 +109,7 @@ section.scroll-box > div.info-receita li{
 
 section.scroll-add-receita{
     margin: auto;
-    height: 80%;
+    height: 85%;
     border: 1px solid #db8b8b;
     border-radius: 15px 0px 0px 15px;
     overflow-y: scroll;
@@ -176,6 +176,7 @@ article.article-add-receita > h1{
     width: 100%;
     text-align: center;
     border-radius: 0px 0px 50% 50% ;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.411);
 }
 
 section.scroll-add-receita{
@@ -185,6 +186,10 @@ section.scroll-add-receita{
 form{
     list-style-position: inside;
     padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 form.form-add-receita > ul > li{
@@ -200,13 +205,28 @@ form.form-add-receita> input#nome-receita{
     width: 240px;
 }
 
-form.form-add-receita > ul > li > input#quant-ingred{
+form.form-add-receita > ul > li > input.quant-ingred{
     width: 53px;
     margin-right: 5px;
 }
 
-form.form-add-receita > ul > li > input#ingrediente{
+form.form-add-receita > ul > li > input.ingrediente{
     width: 150px;
+}
+
+form.form-add-receita > input.enviar-receita{
+    margin: 10px;
+    width: 100px;
+    text-align: center;
+}
+
+form.form-add-receita h3 {
+    padding-top: 10px;
+    
+}
+
+textarea{
+    padding: 5px;
 }
 
 
