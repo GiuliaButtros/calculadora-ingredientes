@@ -52,11 +52,15 @@ main{
 
 article{
    height: 100%;
-   padding: 20px;
+   
 
    display: flex;
    flex-direction: column;
    align-items: center  
+}
+
+article.main-article{
+    padding: 20px;
 }
 
 article h1 {
@@ -163,8 +167,19 @@ article p.botao:hover{
 
 /* PÁGINA ADD RECEITA */
 
+article.article-add-receita {
+    
+}
+
+article.article-add-receita > h1{
+    background-color: #dea8a8;
+    width: 100%;
+    text-align: center;
+    border-radius: 0px 0px 50% 50% ;
+}
+
 section.scroll-add-receita{
-    width: 90%;
+    width: 80%;
 }
 
 form{
