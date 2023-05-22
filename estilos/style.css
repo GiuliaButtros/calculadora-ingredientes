@@ -24,7 +24,6 @@ nav{
     background-color: #D1B0B0 ;
     width: 100vw;
    
-
     display: flex;    
     align-items: center;
     justify-content: center;
@@ -57,13 +56,11 @@ article{
 
    display: flex;
    flex-direction: column;
-   align-items: center
-   
+   align-items: center  
 }
 
 article h1 {
-    padding: 20px 0px;
-    
+    padding: 20px 0px; 
 }
 
 
@@ -152,7 +149,37 @@ article p.botao:hover{
 
 
 /* PÁGINA ADD RECEITA */
-article div.div-add-receita{
-    flex-grow: 2;
+
+section.scroll-add-receita{
+    width: 90%;
 }
+
+form.form-add-receita{
+    list-style-position: inside;
+    padding: 15px;
+}
+
+form.form-add-receita > ul > li{
+    padding-top: 10px;
+    
+}
+
+form.form-add-receita input{
+    padding: 5px;
+}
+
+form.form-add-receita> input#nome-receita{
+    width: 240px;
+}
+
+form.form-add-receita > ul > li > input#quant-ingred{
+    width: 53px;
+    margin-right: 5px;
+}
+
+form.form-add-receita > ul > li > input#ingrediente{
+    width: 150px;
+}
+
+
 
