@@ -22,11 +22,11 @@
 
             <form action="">
                 
-                <select name="receitas" id="select-receitas" required>
+                <select name="receitas" id="select-receitas" required onchange="mostrarReceita()">
 
                     <option value="" selected>------------Escolha------------</option>
 
-                    <optgroup label="Salgados">
+                   <!-- <optgroup label="Salgados">
                         <option value="omelete">Omelete</option>
 
                     </optgroup>
@@ -34,12 +34,13 @@
                     <optgroup label="Doces">
                         <option value="brigadeiro">Brigadeiro</option>
 
-                    </optgroup>
+                    </optgroup> -->
                 </select>
             </form>
 
             <section class="scroll-box">
-                <div id="omelete" class="info-receita">
+                <p id="texto-receita"></p>
+               <!--<div id="omelete" class="info-receita">
                     <h2>Omelete simples</h2>
                     <p>Nível de preparo: fácil</p>
 
@@ -103,16 +104,14 @@
                         <li></li> 
                     </ol>
 
-                </div>
+                </div>--> 
 
             </section>
 
             <form action="" class="num-pessoas">
                 <label for="id-num-pessoas">Indique o rendimento de acordo com número de pessoas a servir:</label>
-                <input type="number" name="num-pessoas" id="id-num-pessoas">
+                <input type="number" name="num-pessoas" id="id-num-pessoas" onchange="mostrarReceita()" value="1">
             </form>
-
-            <!--<p class="botao"><a href="add-receita.html" target="_self" rel="next">Adicionar receita</a></p>-->
 
         </article>
 
@@ -129,48 +128,38 @@
                     <input type="text" name="nome" id="nome-receita" placeholder="Nome da sua receita" required>
  
                     <ul>
-                        <li><input type="number" name="quant" id="ing1Q" placeholder="Quant." class="quant-ingred"><input type="text" name="ingrediente" id="ing1" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
+                        <li><input type="number" name="quant" id="ing1Q" placeholder="Quant." class="quant-ingred" required> <input type="text" name="ingrediente" id="ing1" placeholder="Medida e nome do ingrediente" class="ingrediente" required></li>
 
-                        <li><input type="number" name="quant" id="ing2Q" placeholder="Quant." class="quant-ingred"><input type="text" name="ingrediente" id="ing2" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
+                        <li><input type="number" name="quant" id="ing2Q" placeholder="Quant." class="quant-ingred"> <input type="text" name="ingrediente" id="ing2" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
 
-                        <li><input type="number" name="quant" id="ing3Q" placeholder="Quant." class="quant-ingred"><input type="text" name="ingrediente" id="ing3" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
+                        <li><input type="number" name="quant" id="ing3Q" placeholder="Quant." class="quant-ingred"> <input type="text" name="ingrediente" id="ing3" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
 
-                        <li><input type="number" name="quant" id="ing4Q" placeholder="Quant." class="quant-ingred"><input type="text" name="ingrediente" id="ing4" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
+                        <li><input type="number" name="quant" id="ing4Q" placeholder="Quant." class="quant-ingred"> <input type="text" name="ingrediente" id="ing4" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
                         
-                        <li><input type="number" name="quant" id="ing5Q" placeholder="Quant." class="quant-ingred"><input type="text" name="ingrediente" id="ing5" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
+                        <li><input type="number" name="quant" id="ing5Q" placeholder="Quant." class="quant-ingred"> <input type="text" name="ingrediente" id="ing5" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
 
-                        <li><input type="number" name="quant" id="ing6Q" placeholder="Quant." class="quant-ingred"><input type="text" name="ingrediente" id="ing6" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
+                        <li><input type="number" name="quant" id="ing6Q" placeholder="Quant." class="quant-ingred"> <input type="text" name="ingrediente" id="ing6" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
 
-                        <li><input type="number" name="quant" id="ing7Q" placeholder="Quant." class="quant-ingred"><input type="text" name="ingrediente" id="ing7" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
+                        <li><input type="number" name="quant" id="ing7Q" placeholder="Quant." class="quant-ingred"> <input type="text" name="ingrediente" id="ing7" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
 
-                        <li><input type="number" name="quant" id="ing8Q" placeholder="Quant." class="quant-ingred"><input type="text" name="ingrediente" id="ing8" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
+                        <li><input type="number" name="quant" id="ing8Q" placeholder="Quant." class="quant-ingred"> <input type="text" name="ingrediente" id="ing8" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
 
-                        <li><input type="number" name="quant" id="ing9Q" placeholder="Quant." class="quant-ingred"><input type="text" name="ingrediente" id="ing9" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
+                        <li><input type="number" name="quant" id="ing9Q" placeholder="Quant." class="quant-ingred"> <input type="text" name="ingrediente" id="ing9" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
 
-                        <li><input type="number" name="quant" id="ing10Q" placeholder="Quant." class="quant-ingred"><input type="text" name="ingrediente" id="ing10" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
+                        <li><input type="number" name="quant" id="ing10Q" placeholder="Quant." class="quant-ingred"> <input type="text" name="ingrediente" id="ing10" placeholder="Medida e nome do ingrediente" class="ingrediente"></li>
                     </ul>
 
                     <h3>Modo de preparo:</h3>
                     <textarea name="preparo" id="preparo" cols="30" rows="10"></textarea>
 
-                    <input type="submit" value="Enviar" class="enviar-receita">
-                    
+                    <button type="button" class="enviar-receita" onclick="adicionarReceita ()">Enviar</button>                   
 
                 </form>
     
             </section>
 
-            
-
-            <!-- <p class="botao"><a href="index.html" rel="prev">Voltar</a></p>-->
-
-        </article>
-
-        
-
-
+        </article>      
     </main>
-
     <script src="JavaScript/calc-ingredientes.js"></script>
     
 </body>

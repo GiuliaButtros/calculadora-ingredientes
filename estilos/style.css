@@ -20,9 +20,18 @@ body{
     background-color: white;
 }
 
+.titulo{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.subtitulo{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
 nav{
     background-color: #D1B0B0 ;
-   /* width: 100vw;*/
    
     display: flex;    
     align-items: center;
@@ -44,15 +53,12 @@ nav a:hover{
 main{
     margin: auto;
     background-color: white;
-   /* width: 100vw;*/
-    height: 640px;
-    
+    height: 640px;    
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.411);
 }
 
 article{
    height: 100%;
-   
 
    display: flex;
    flex-direction: column;
@@ -66,7 +72,6 @@ article.main-article{
 article h1 {
     padding: 20px 0px; 
 }
-
 
 article form select{ 
     font-size: 1.2em;
@@ -103,8 +108,7 @@ section.scroll-box > div.info-receita > ul, ol{
 
 section.scroll-box > div.info-receita li{
     padding-top: 10px;
-    line-height: 1.5;
-    
+    line-height: 1.5;   
 }
 
 section.scroll-add-receita{
@@ -136,8 +140,7 @@ section.scroll-add-receita{
 }
 
 section.scroll-box, .scroll-add-receita > p{
-    padding: 15px 10px;
-    
+    padding: 15px 10px;   
 }
 
 form.num-pessoas {
@@ -151,7 +154,9 @@ form.num-pessoas label, input{
 }
 
 form.num-pessoas input{
+    font-size: 1.1em;
     width: 50px;
+    text-align: center;
 }
 
 article p.botao{      
@@ -167,10 +172,6 @@ article p.botao:hover{
 
 /* PÁGINA ADD RECEITA */
 
-article.article-add-receita {
-    
-}
-
 article.article-add-receita > h1{
     background-color: #dea8a8;
     width: 100%;
@@ -181,6 +182,11 @@ article.article-add-receita > h1{
 
 section.scroll-add-receita{
     width: 80%;
+}
+
+section.scroll-add-receita span{
+    background-color: #f3c7c7;
+    padding: 3px;
 }
 
 form{
@@ -221,8 +227,7 @@ form.form-add-receita > input.enviar-receita{
 }
 
 form.form-add-receita h3 {
-    padding-top: 10px;
-    
+    padding-top: 10px;    
 }
 
 textarea{
