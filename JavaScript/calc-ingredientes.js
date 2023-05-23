@@ -1,6 +1,6 @@
 // --- Còdigo que roda quando a página é carregada
 
-let receitas = [
+let receitas = [ // Array de receitas default
     {
         "id": 0,
         "nome": "Receita",
@@ -38,68 +38,59 @@ updateSelect();
 
 // --- Funções
 
-function updateSelect(){
-    let numeroDeReceitas = receitas.length;
-    LimparSelect(numeroDeReceitas);
-    for (let i = 0; i < receitas.length; i++){
-        let rec = document.createElement("option");
-        rec.text = receitas [i].nome;
-        rec.value = receitas [i].id;
-        selectReceitas.add(rec);
+function updateSelect(){ //Povoar o seletor com o array
+    let numeroDeReceitas = receitas.length; // Guarda o tamanho do array na variável numeroDeReceitas
+    for(i = numeroDeReceitas-1; i >= 0; i--){ //Percorre os ítens do seletor de trás para frente
+        selectReceitas.remove(i); //Remove o ítem referente ao índice
+    }
+    for (let i = 0; i < receitas.length; i++){ //Percorre o array de receitas
+        let rec = document.createElement("option"); //Cria um elemento option (pré programado)
+        rec.text = receitas [i].nome; //Definição de propriedades / 'nome' definido no array
+        rec.value = receitas [i].id; //Definição de propriedades / 'id' definido no array
+        selectReceitas.add(rec); //Manda adicionar o elemento option no seletor
     }
 }
 
-function LimparSelect(numero) {
-    for(i = numero-1; i >= 0; i--){
-        selectReceitas.remove(i);
-    }
-}
 
-//onchange="mostrarReceita()" no seletor e no input de numero de pessoas
+function mostrarReceita(){ //print do string na tela
+    let receita = receitas.find(receita => receita.nome === document.getElementById("select-receitas").options[document.getElementById("select-receitas").selectedIndex].text); //Procura no array a receita cujo nome corresponte ao texto da opção selecionada e guarda essa receita na variável (let receita)
 
-function mostrarReceita(){
-    let receita = receitas.find(receita => receita.nome === document.getElementById("select-receitas").options[document.getElementById("select-receitas").selectedIndex].text);
-
-    let pessoas = Number(document.getElementById("id-num-pessoas").value);
+    let pessoas = Number(document.getElementById("id-num-pessoas").value); // Variável para saber o número de pessoas que o usuário quer
 
     let textoRec = "<span class = 'titulo'>" + receita.nome + "</span><br><br><span class='subtitulo'>Ingredientes:</span><br><br>";
 
-    if(receita.ingred1){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred1Q? (receita.ingred1Q * pessoas + " ") : 
-    "") + receita.ingred1 + "<br>"}
+    if(receita.ingred1){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred1Q? (receita.ingred1Q * pessoas + " ") : "") + receita.ingred1 + "<br>"}
 
-    if(receita.ingred2){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred2Q? (receita.ingred2Q * pessoas + " ") : 
-    "") + receita.ingred2 + "<br>"}
+    // if(receita.ingred1) está checando se essa propriedade existe nessa receita
+    
+    // ? = if/else - pergunta "receira.ingred1Q existe?" / O que vem depois da interrogação é o caso positivo, o que vem depois dos : é o caso negativo
 
-    if(receita.ingred3){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred3Q? (receita.ingred3Q * pessoas + " ") : 
-    "") + receita.ingred3 + "<br>"}
+    if(receita.ingred2){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred2Q? (receita.ingred2Q * pessoas + " ") : "") + receita.ingred2 + "<br>"}
 
-    if(receita.ingred4){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred4Q? (receita.ingred4Q * pessoas + " ") : 
-    "") + receita.ingred4 + "<br>"}
+    if(receita.ingred3){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred3Q? (receita.ingred3Q * pessoas + " ") : "") + receita.ingred3 + "<br>"}
 
-    if(receita.ingred5){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred5Q? (receita.ingred5Q * pessoas + " ") : 
-    "") + receita.ingred5 + "<br>"}
+    if(receita.ingred4){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred4Q? (receita.ingred4Q * pessoas + " ") : "") + receita.ingred4 + "<br>"}
 
-    if(receita.ingred6){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred6Q? (receita.ingred6Q * pessoas + " ") : 
-    "") + receita.ingred6 + "<br>"}
+    if(receita.ingred5){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred5Q? (receita.ingred5Q * pessoas + " ") : "") + receita.ingred5 + "<br>"}
 
-    if(receita.ingred7){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred7Q? (receita.ingred7Q * pessoas + " ") : 
-    "") + receita.ingred7 + "<br>"}
+    if(receita.ingred6){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred6Q? (receita.ingred6Q * pessoas + " ") : "") + receita.ingred6 + "<br>"}
 
-    if(receita.ingred8){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred8Q? (receita.ingred8Q * pessoas + " ") : 
-    "") + receita.ingred8 + "<br>"}
+    if(receita.ingred7){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred7Q? (receita.ingred7Q * pessoas + " ") : "") + receita.ingred7 + "<br>"}
 
-    if(receita.ingred9){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred9Q? (receita.ingred9Q * pessoas + " ") : 
-    "") + receita.ingred9 + "<br>"}
+    if(receita.ingred8){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred8Q? (receita.ingred8Q * pessoas + " ") : "") + receita.ingred8 + "<br>"}
 
-    if(receita.ingred10){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred10Q? (receita.ingred10Q * pessoas + " ") : 
-    "") + receita.ingred10 + "<br>"}
+    if(receita.ingred9){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred9Q? (receita.ingred9Q * pessoas + " ") : "") + receita.ingred9 + "<br>"}
 
-    textoRec = textoRec + "<br><span class='subtitulo'> Preparo:</span><br><br>" + receita.preparo;
-    document.getElementById("texto-receita").innerHTML = textoRec;
+    if(receita.ingred10){textoRec = textoRec + "&nbsp&nbsp• " + (receita.ingred10Q? (receita.ingred10Q * pessoas + " ") : "") + receita.ingred10 + "<br>"}
+
+    textoRec = textoRec + "<br><span class='subtitulo'> Preparo:</span><br><br>" + receita.preparo; //Adiciona o subtítulo e o preparo da receita
+    document.getElementById("texto-receita").innerHTML = textoRec; //Usar innerHTML para poder reconhecer as tags dentro do string
 }
+//onchange="mostrarReceita()" no seletor e no input de numero de pessoas
 
-// onclick="adicionarReceita ()" no botão
-function adicionarReceita(){
+
+function adicionarReceita(){ //Função que é chamada ao clicar no botão Adicionar
+    //Guarda os valores das caixas de input em variáveis
     let nome = document.getElementById("nome-receita").value;
     let ing1Q = document.getElementById("ing1Q").value;
     let ing1 = document.getElementById("ing1").value;
@@ -123,8 +114,8 @@ function adicionarReceita(){
     let ing10 = document.getElementById("ing10").value;
     let preparo = document.getElementById("preparo").value;
 
-    if(nome!="" && ing1!="" && preparo!=""){
-        let receita =
+    if(nome!="" && ing1!="" && preparo!=""){ //Se nome e ing1 e preparo forem difertentes de "vazio"
+        let receita = // Cria um objeto com as mesmas propriedades das receitas do array
             {
                 "id": receitas.length,
                 "nome": nome,
@@ -150,16 +141,19 @@ function adicionarReceita(){
                 "ingred10": ing10,
                 "preparo": preparo
             }
-        receitas.push(receita);
-        updateSelect();
+        receitas.push(receita); // Adiciona o novo objeto (receita) ao array
+        updateSelect(); //Para a receita aparecer no seletor
         alert("Receita adicionada!");
-        limparFormulatio();   
-    }else{
+        limparFormulatio();   //Apaga os inputsn após adição da receita
+    }else{ // Se faltar informação, ocorre esse alerta:
         alert("Por favor adicione Nome, Preparo e pelo menos um Ingrediente!")
     }
 }
+// onclick="adicionarReceita ()" no botão
 
-function limparFormulatio (){
+
+
+function limparFormulatio (){ // Coloca o valor "vazio" em todos os inputs
     document.getElementById("nome-receita").value = "";
     document.getElementById("ing1Q").value = "";
     document.getElementById("ing1").value = "";
