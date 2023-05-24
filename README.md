@@ -4,7 +4,7 @@
 
 ## Ferramentas: HTML5 | CSS3 | JavaScript
 
-# DEPLOY:
+# DEPLOY: https://giuliabuttros.github.io/calculadora-ingredientes/
 
 [X] Busca de referências de aplicações similares
 [X] Estruturação do HTML
